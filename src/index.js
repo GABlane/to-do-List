@@ -1,0 +1,1 @@
+alert("\"run npm run dev\"");
