@@ -1,1 +1,1 @@
-alert("\"run npm run dev\"");
+import "./styles.css";

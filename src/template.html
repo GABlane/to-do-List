@@ -6,6 +6,53 @@
     <title>Document</title>
 </head>
 <body>
-    Intial code
+    <div class="todo-container">
+        <div class="header">
+            <h1>📝 Todo App</h1>
+            <p>Stay organized and productive</p>
+        </div>
+
+        <div class="input-section">
+            <div class="input-container">
+                <input type="text" id="todoInput" placeholder="What needs to be done?">
+                <button id="addBtn">Add Task</button>
+            </div>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+        </div>
+
+        <div class="todo-list" id="todoList">
+            <!-- Sample todo items -->
+            <div class="todo-item">
+                <input type="checkbox" class="todo-checkbox">
+                <span class="todo-text">Complete the project proposal</span>
+                <div class="todo-actions">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            </div>
+
+            <div class="todo-item completed">
+                <input type="checkbox" class="todo-checkbox" checked>
+                <span class="todo-text">Review team feedback</span>
+                <div class="todo-actions">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            </div>
+
+            <div class="todo-item">
+                <input type="checkbox" class="todo-checkbox">
+                <span class="todo-text">Prepare presentation slides</span>
+                <div class="todo-actions">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
 </body>
 </html>
