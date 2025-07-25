@@ -1,58 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="todo-container">
-        <div class="header">
-            <h1>📝 Todo App</h1>
-            <p>Stay organized and productive</p>
+    <div id="content">
+        <div id="header">
+            <h1>//TO-DO LIST</h1>
+        </div>
+        <div id="category">
+            <h1>Home</h1>
+        </div>
+        <div id="discription">
+            <input type="checkbox" > example
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, eos tempore hic enim non, possimus
+                accusamus a vel magnam maiores necessitatibus temporibus quas incidunt esse voluptatem atque? Nihil,
+                similique animi!</p>
         </div>
 
-        <div class="input-section">
-            <div class="input-container">
-                <input type="text" id="todoInput" placeholder="What needs to be done?">
-                <button id="addBtn">Add Task</button>
-            </div>
-            
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="active">Active</button>
-                <button class="filter-btn" data-filter="completed">Completed</button>
-            </div>
-        </div>
 
-        <div class="todo-list" id="todoList">
-            <!-- Sample todo items -->
-            <div class="todo-item">
-                <input type="checkbox" class="todo-checkbox">
-                <span class="todo-text">Complete the project proposal</span>
-                <div class="todo-actions">
-                    <button class="edit-btn">Edit</button>
-                    <button class="delete-btn">Delete</button>
-                </div>
-            </div>
+        <dialog>
+            <form action="">
 
-            <div class="todo-item completed">
-                <input type="checkbox" class="todo-checkbox" checked>
-                <span class="todo-text">Review team feedback</span>
-                <div class="todo-actions">
-                    <button class="edit-btn">Edit</button>
-                    <button class="delete-btn">Delete</button>
-                </div>
-            </div>
-
-            <div class="todo-item">
-                <input type="checkbox" class="todo-checkbox">
-                <span class="todo-text">Prepare presentation slides</span>
-                <div class="todo-actions">
-                    <button class="edit-btn">Edit</button>
-                    <button class="delete-btn">Delete</button>
-                </div>
-            </div>
-        </div>
+            </form>
+        </dialog>
+    </div>
 </body>
+
 </html>

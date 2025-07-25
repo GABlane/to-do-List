@@ -1,215 +1,72 @@
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+:root {
+    /* Primary Colors */
+    --primary-light: #667eea;
+    --primary-dark: #764ba2;
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
-        .todo-container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
-            padding: 30px;
-        }
+    /* Background Colors */
+    --bg-white: #ffffff;
+    --bg-light-gray: #f8f9fa;
+    --bg-border: #f1f1f1;
 
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    /* Text Colors */
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-muted: #999999;
 
-        .header h1 {
-            color: #333;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
+    /* Border Colors */
+    --border-light: #e1e5e9;
+    --border-primary: #667eea;
+    --border-success: #28a745;
 
-        .header p {
-            color: #666;
-            font-size: 1rem;
-        }
+    /* Action Colors */
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
 
-        .input-section {
-            margin-bottom: 30px;
-        }
+    /* Shadow */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+}
 
-        .input-container {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
-        #todoInput {
-            flex: 1;
-            padding: 15px;
-            border: 2px solid #e1e5e9;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
+#content {
+    display: grid;
+    grid-template-columns: minmax(200px, 250px) minmax(500px, 1fr);
+    grid-template-rows: 70px minmax(100px, 1fr);
+    height: 100vh;
+    grid-gap: 2px 5px;
+}   
 
-        #todoInput:focus {
-            outline: none;
-            border-color: #667eea;
-        }
+#header {
+    grid-area: 1/1 / 2/3;
+    background: var(--border-primary);
+    padding: 10px;
+}
 
-        #addBtn {
-            padding: 15px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: transform 0.2s ease;
-        }
+#category {
+    grid-area: 2/1 / 3/2;
+    background-color: var(--border-light);
+    padding: 10px;
+}
 
-        #addBtn:hover {
-            transform: translateY(-2px);
-        }
+#discription {
+    grid-area: 2/2 / 3/3;
+    background-color: var(--bg-white);
+    padding: 20px;
 
-        .filters {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .filter-btn {
-            padding: 8px 16px;
-            border: 2px solid #e1e5e9;
-            background: white;
-            color: #666;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: #667eea;
-            color: white;
-            border-color: #667eea;
-        }
-
-        .todo-list {
-            margin-top: 20px;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .todo-item {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            margin-bottom: 10px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-            transition: all 0.3s ease;
-        }
-
-        .todo-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .todo-item.completed {
-            opacity: 0.6;
-            border-left-color: #28a745;
-        }
-
-        .todo-item.completed .todo-text {
-            text-decoration: line-through;
-        }
-
-        .todo-checkbox {
-            width: 20px;
-            height: 20px;
-            margin-right: 15px;
-            cursor: pointer;
-            accent-color: #667eea;
-        }
-
-        .todo-text {
-            flex: 1;
-            font-size: 1rem;
-            color: #333;
-        }
-
-        .todo-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .edit-btn, .delete-btn {
-            padding: 6px 12px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: opacity 0.3s ease;
-        }
-
-        .edit-btn {
-            background: #ffc107;
-            color: white;
-        }
-
-        .delete-btn {
-            background: #dc3545;
-            color: white;
-        }
-
-        .edit-btn:hover, .delete-btn:hover {
-            opacity: 0.8;
-        }
-
-        .stats {
-            margin-top: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            text-align: center;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 40px 20px;
-            color: #999;
-        }
-
-        .empty-state i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        /* Scrollbar styling */
-        .todo-list::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .todo-list::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 3px;
-        }
-
-        .todo-list::-webkit-scrollbar-thumb {
-            background: #667eea;
-            border-radius: 3px;
-        }
+}
